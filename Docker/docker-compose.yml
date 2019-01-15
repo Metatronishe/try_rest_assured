@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  api-test:
+    container_name: twitter_api_test_java
+    build:
+      context: .
+      dockerfile: ./jdk/Dockerfile
+    env_file:
+      - ./env.conf
+    volumes:
+      - ./:/code
+    entrypoint: ./entrypoint.sh
