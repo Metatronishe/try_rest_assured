@@ -29,4 +29,37 @@ public class StatusUpdateTest {
                 .statusCode(403);
     }
 
+    @Test
+    @Description("Try to duplicate update status")
+    public void CheckDuplicateUpdateStatus() {
+        HashMap<String, String> json = new HashMap<>();
+        json.put("status", "My status");
+
+        Requests.StatusUpdateTest(json)
+                .statusCode(200);
+
+        Requests.StatusUpdateTest(json)
+                .statusCode(403);
+    }
+
+    @Test
+    @Description("Try to update status to empty text")
+    public void TryToUpdateEmptyStatus() {
+        HashMap<String, String> json = new HashMap<>();
+        json.put("status", "");
+
+        Requests.StatusUpdateTest(json)
+                .statusCode(200);
+    }
+
+    @Test
+    @Description("Try to update status without required request body param 'status'")
+    public void TryToUpdateStatusWithoutStatusValueInTheRequestBody() {
+        HashMap<String, String> json = new HashMap<>();
+        json.put("attachment_url", "https://www.youtube.com/watch?v=eQgCak_CBpk");
+
+        Requests.StatusUpdateTest(json)
+                .statusCode(403);
+    }
+
 }

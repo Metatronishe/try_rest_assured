@@ -31,7 +31,7 @@ public class Requests {
                 .contentType(ContentType.JSON)
                 .header("secret_key", SECRET_KEY)
                 .when()
-                .post("statuses/retweet/"+id+".json")
+                .post("statuses/retweet/" + id + ".json")
                 .then();
     }
 
