@@ -1,7 +1,7 @@
 PROJECT_NAME?=twitter_test_api
 COMPOSE_FILE?=./Docker/docker-compose.yml
 
-aaa:
+build:
 	docker-compose -p ${PROJECT_NAME} -f ${COMPOSE_FILE} build
 
 run:
