@@ -53,7 +53,7 @@ public class StatusUpdateTest {
     }
 
     @Test
-    @Description("Try to update status without required request body param 'status'")
+    @Description("Try to update status without required request body param 'status'K")
     public void TryToUpdateStatusWithoutStatusValueInTheRequestBody() {
         HashMap<String, String> json = new HashMap<>();
         json.put("attachment_url", "https://www.youtube.com/watch?v=eQgCak_CBpk");

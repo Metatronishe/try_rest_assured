@@ -1,6 +1,6 @@
 .idea
 .gradle
+.allure
 build
-gradle
 out
 .gradletasknamecache
