@@ -1,14 +1,16 @@
 version: '2.1'
 services:
   api-test:
-    container_name: twitter_api_test_java
+    container_name: twitter_test_api_java
     build:
-      context: .
-      dockerfile: ./jdk/Dockerfile
+      context: ./../
+      dockerfile: ./Docker/jdk/Dockerfile
     env_file:
       - ./env.conf
     ports:
-      - "30000-45000:8765"
+      - "4040:4040"
+      - "5050:5050"
     volumes:
-      - ./:/code
-    entrypoint: ./entrypoint.sh
+      - ./../:/code
+      - ./build/allure-results:/app/allure-results
+    entrypoint: ./Docker/entrypoint.sh

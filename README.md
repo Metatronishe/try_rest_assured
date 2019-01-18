@@ -4,7 +4,7 @@ Scratch tests Tweeter API with Rest Assured
 `make build` - to build docker container <p>
 `make run` - to run container <p>
 `make test` - to run tests <p>
-`make report` - to view test report <p>
+`make report` - to view test report `http://localhost:4040`<p>
 
 ##### Stop and Remove container <p>
 `make stop` - stop the container <p>
